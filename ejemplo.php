@@ -18,6 +18,7 @@
             <div class="col-lg-12">
             <div class="card shadow-lg p-3 mb-5 bg-white ">
             <?php
+            //para mostrar mensajes 
    $mensaje= null;
    $mensaje1= null;
    $mensaje2= null;
@@ -25,14 +26,18 @@
 
    //Expresion para nombre
 if( isset($_POST['validar']) ) {
+  //almacena los datos escritos variables y los envia al servidor 
 $nombre=$_POST["nombre"];
+// si el campo esta vacio mostrara el el mensaje que es requerido el campo
 if ($nombre == "")
 {
 $mensaje="El campo es requerido";
 }
+//Compara lo que se escribio en el texto
 //La expresion hace que la primera letra escrita tiene que ser mayuscula
 else if(!preg_match("/^[A-ZÁÉÍÓÚ][a-záéíóú]*$/", $nombre))
 {
+  //si la letra no es mayuscula muestra el siguiente mensaje
   $mensaje ="La primera letra tiene que ser mayuscula";
 }
 else
